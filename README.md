@@ -44,6 +44,44 @@ This repo is itself a Claude Code marketplace (`/.claude-plugin/marketplace.json
 
 Or just run `npx gitlawb-sidecar init` in a repo — that writes project-local skills Claude and Cursor already scan.
 
+## Embed into an existing GitHub repo
+
+Do **not** spam other people's repositories. Add one of these only to repos you own, or open a PR and let the maintainer decide.
+
+**Shortest line — drop into any existing workflow after checkout:**
+
+```yaml
+- uses: DevOps21133/gitlawb-sidecar@main
+  with:
+    identity: ${{ secrets.GITLAWB_IDENTITY_PEM }}
+```
+
+**Or a standalone workflow that calls ours:**
+
+```yaml
+name: GitLawb sidecar
+on: [push, pull_request]
+jobs:
+  mirror:
+    uses: DevOps21133/gitlawb-sidecar/.github/workflows/reusable-mirror.yml@main
+    secrets:
+      GITLAWB_IDENTITY_PEM: ${{ secrets.GITLAWB_IDENTITY_PEM }}
+```
+
+Then add repo secret `GITLAWB_IDENTITY_PEM` (the PEM from `gitlawb-sidecar status --show-pem-hint`).
+
+**How this spreads without marketing**
+
+1. An agent that already has the skill (or a human) runs `init` in a repo they are working on. That commits the skill files + this workflow. Every later clone inherits it.
+2. Maintainers paste the one `uses:` line into a workflow that already runs on every PR.
+3. A README badge is optional, not required:
+
+```md
+[![GitLawb sidecar](https://img.shields.io/badge/gitlawb-sidecar-111)](https://github.com/DevOps21133/gitlawb-sidecar)
+```
+
+Unsolicited PRs to strangers are the wrong channel. The agent skill is the channel: it fires when someone already asked to publish, backup, or prove a commit.
+
 ## Commands
 
 | Command | What it does |

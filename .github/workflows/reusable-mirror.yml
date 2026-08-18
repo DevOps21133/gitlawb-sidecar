@@ -1,0 +1,33 @@
+# One-job embed for any public GitHub repo:
+#
+#   jobs:
+#     mirror:
+#       uses: DevOps21133/gitlawb-sidecar/.github/workflows/reusable-mirror.yml@main
+#       secrets:
+#         GITLAWB_IDENTITY_PEM: ${{ secrets.GITLAWB_IDENTITY_PEM }}
+#
+# The calling repo must have secret GITLAWB_IDENTITY_PEM and stay public.
+# Do not enable this on private source.
+
+name: GitLawb sidecar (reusable)
+on:
+  workflow_call:
+    secrets:
+      GITLAWB_IDENTITY_PEM:
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: DevOps21133/gitlawb-sidecar@main
+        with:
+          identity: ${{ secrets.GITLAWB_IDENTITY_PEM }}

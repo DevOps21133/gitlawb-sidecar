@@ -10,7 +10,7 @@ export function skillSourcePath(): string {
 
 export function workflowTemplate(): string {
   return `# GitHub stays origin. This job mirrors HEAD to GitLawb and comments the cert.
-# Add repo secret GITLAWB_IDENTITY_PEM (the contents of identity.pem).
+# Add repo secret GITLAWB_IDENTITY_PEM (contents of identity.pem).
 # Mirrors are public. Do not enable this on private source.
 
 name: GitLawb sidecar
@@ -30,14 +30,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: DevOps21133/gitlawb-sidecar@main
         with:
-          node-version: "22"
-      - name: Sync signed mirror
-        run: npx --yes github:DevOps21133/gitlawb-sidecar sync --comment-pr
-        env:
-          GITLAWB_IDENTITY_PEM: \${{ secrets.GITLAWB_IDENTITY_PEM }}
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          identity: \${{ secrets.GITLAWB_IDENTITY_PEM }}
 `;
 }
 
