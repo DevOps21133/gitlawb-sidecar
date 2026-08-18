@@ -14,7 +14,9 @@
     "action.yml",
     "README.md",
     "LICENSE",
-    ".claude-plugin"
+    "plugin.json",
+    ".claude-plugin",
+    ".cursor-plugin"
   ],
   "engines": {
     "node": ">=20"

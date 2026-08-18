@@ -4,10 +4,11 @@
   "version": "0.1.0",
   "author": {
     "name": "DevOps21133",
-    "url": "https://github.com/DevOps21133"
+    "email": "bloimlala@gmail.com"
   },
   "homepage": "https://github.com/DevOps21133/gitlawb-sidecar",
   "repository": "https://github.com/DevOps21133/gitlawb-sidecar",
   "license": "MIT",
-  "keywords": ["gitlawb", "github", "git", "agents", "provenance"]
+  "keywords": ["gitlawb", "github", "git", "agents", "provenance", "did"],
+  "skills": ["./skills/gitlawb-sidecar"]
 }

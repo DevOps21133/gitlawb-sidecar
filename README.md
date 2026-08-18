@@ -40,6 +40,8 @@ Installing the package also drops `SKILL.md` into `~/.claude/skills`, `~/.cursor
 /plugin install gitlawb-sidecar@gitlawb-sidecar
 ```
 
+This repo is itself a Claude Code marketplace (`/.claude-plugin/marketplace.json`) and a Cursor plugin (`.cursor-plugin/plugin.json` + root `plugin.json`). Official Anthropic / Cursor directory listings go through their review forms; this GitHub marketplace works immediately.
+
 Or just run `npx gitlawb-sidecar init` in a repo — that writes project-local skills Claude and Cursor already scan.
 
 ## Commands
