@@ -1,0 +1,24 @@
+{
+  "name": "gitlawb-sidecar",
+  "owner": {
+    "name": "gitlawb-sidecar"
+  },
+  "metadata": {
+    "description": "On-ramp that adds a signed GitLawb remote next to GitHub"
+  },
+  "plugins": [
+    {
+      "name": "gitlawb-sidecar",
+      "source": {
+        "source": "npm",
+        "package": "gitlawb-sidecar",
+        "version": "0.1.0"
+      },
+      "description": "Add a signed GitLawb mirror next to GitHub. Never run gl. Never change origin.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["gitlawb", "github", "git", "agents"],
+      "category": "development"
+    }
+  ]
+}

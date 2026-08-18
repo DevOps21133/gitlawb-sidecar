@@ -1,0 +1,10 @@
+src
+fixtures
+tsconfig.json
+*.tsbuildinfo
+**/*.test.js
+**/*.test.d.ts
+**/*.test.js.map
+.git
+.github
+node_modules

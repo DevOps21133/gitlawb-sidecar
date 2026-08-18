@@ -1,0 +1,11 @@
+{
+  "name": "gitlawb-sidecar",
+  "description": "Signed GitLawb mirror next to GitHub. Humans stay on origin; agents get a verifiable certificate without using the gl CLI.",
+  "version": "0.1.0",
+  "author": {
+    "name": "gitlawb-sidecar"
+  },
+  "homepage": "https://www.npmjs.com/package/gitlawb-sidecar",
+  "license": "MIT",
+  "keywords": ["gitlawb", "github", "git", "agents", "provenance"]
+}

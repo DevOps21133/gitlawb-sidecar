@@ -1,0 +1,22 @@
+name: GitLawb sidecar
+description: Mirror this commit to GitLawb and comment the signed certificate on the pull request.
+author: gitlawb-sidecar
+branding:
+  icon: git-commit
+  color: gray-dark
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+    - name: Sync signed mirror
+      shell: bash
+      run: npx --yes gitlawb-sidecar@0.1.0 sync --comment-pr
+      env:
+        GITLAWB_IDENTITY_PEM: ${{ inputs.identity }}
+        GITHUB_TOKEN: ${{ github.token }}
+inputs:
+  identity:
+    description: Contents of identity.pem (use secrets.GITLAWB_IDENTITY_PEM).
+    required: true
