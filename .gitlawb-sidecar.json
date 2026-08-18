@@ -1,6 +1,9 @@
 {
   "version": 1,
-  "github": null,
+  "github": {
+    "owner": "DevOps21133",
+    "repo": "gitlawb-sidecar"
+  },
   "gitlawbDid": "did:key:z6MkouUpuicjnKeYruYvi8dPkL3cNFW1UP4V5amSU1ynQ312",
   "gitlawbRepo": "gitlawb-sidecar",
   "node": "https://node.gitlawb.com",
