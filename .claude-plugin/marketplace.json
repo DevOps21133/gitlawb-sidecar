@@ -10,9 +10,8 @@
     {
       "name": "gitlawb-sidecar",
       "source": {
-        "source": "npm",
-        "package": "gitlawb-sidecar",
-        "version": "0.1.0"
+        "source": "github",
+        "repo": "DevOps21133/gitlawb-sidecar"
       },
       "description": "Add a signed GitLawb mirror next to GitHub. Never run gl. Never change origin.",
       "version": "0.1.0",

@@ -5,7 +5,8 @@
   "author": {
     "name": "gitlawb-sidecar"
   },
-  "homepage": "https://www.npmjs.com/package/gitlawb-sidecar",
+  "homepage": "https://github.com/DevOps21133/gitlawb-sidecar",
+  "repository": "https://github.com/DevOps21133/gitlawb-sidecar",
   "license": "MIT",
   "keywords": ["gitlawb", "github", "git", "agents", "provenance"]
 }

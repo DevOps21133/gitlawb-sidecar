@@ -42,8 +42,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitlawb-sidecar/gitlawb-sidecar"
+    "url": "https://github.com/DevOps21133/gitlawb-sidecar"
   },
+  "homepage": "https://github.com/DevOps21133/gitlawb-sidecar",
   "dependencies": {
     "@gitlawb/gl": "0.7.1"
   },

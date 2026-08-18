@@ -35,10 +35,8 @@ Installing the package also drops `SKILL.md` into `~/.claude/skills`, `~/.cursor
 
 ### Claude Code plugin
 
-After the package is on npm:
-
 ```
-/plugin marketplace add https://unpkg.com/gitlawb-sidecar/.claude-plugin/marketplace.json
+/plugin marketplace add DevOps21133/gitlawb-sidecar
 /plugin install gitlawb-sidecar@gitlawb-sidecar
 ```
 
