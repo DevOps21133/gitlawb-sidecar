@@ -22,8 +22,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
+      - name: Install and build
+        run: npm ci && npm run build
       - name: Sync signed mirror
-        run: npx --yes gitlawb-sidecar@0.1.0 sync --comment-pr
+        run: node dist/cli.js sync --comment-pr
         env:
           GITLAWB_IDENTITY_PEM: ${{ secrets.GITLAWB_IDENTITY_PEM }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

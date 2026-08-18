@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: "22"
       - name: Sync signed mirror
-        run: npx --yes gitlawb-sidecar@0.1.0 sync --comment-pr
+        run: npx --yes github:DevOps21133/gitlawb-sidecar sync --comment-pr
         env:
           GITLAWB_IDENTITY_PEM: \${{ secrets.GITLAWB_IDENTITY_PEM }}
           GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}

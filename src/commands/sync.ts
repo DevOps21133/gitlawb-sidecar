@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { GitlawbClient } from "../core/client.js";
 import {
   checkCert,
@@ -34,6 +35,12 @@ export async function cmdSync(opts: CliOptions): Promise<number> {
   const mapping = readMapping(root);
   const tools = ensureTools();
   const dir = resolveIdentityDir(opts.dir);
+  if (!existsSync(identityPemPath(dir))) {
+    console.error(
+      "no identity.pem — in GitHub Actions add repo secret GITLAWB_IDENTITY_PEM (contents of identity.pem). Locally run: gitlawb-sidecar init",
+    );
+    return 1;
+  }
   const node = mapping?.node || opts.node;
   const did = mapping?.gitlawbDid || showDid(tools, { node, dir });
   const repo = mapping?.gitlawbRepo;
